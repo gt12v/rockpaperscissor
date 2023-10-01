@@ -1,0 +1,20 @@
+import random
+
+# Function to get the user's choice
+def get_user_choice():
+    user_choice = input("Enter your choice (rock/paper/scissors): ").lower()
+    while user_choice not in ["rock", "paper", "scissors"]:
+        user_choice = input("Invalid input. Please enter rock, paper, or scissors: ").lower()
+    return user_choice
+
+# Function to get the computer's choice
+def get_computer_choice():
+    choices = ["rock", "paper", "scissors"]
+    return random.choice(choices)
+
+# Function to determine the winner
+def determine_winner(user_choice, computer_choice):
+    if user_choice == computer_choice:
+        return "It's a tie!"
+    elif user_choice == "rock":
+        return "You win!" if computer_choice == "scissors" else "Computer wins!"
